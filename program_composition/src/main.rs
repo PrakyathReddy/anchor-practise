@@ -7,6 +7,7 @@ fn main() {
     }
 }
 
+// program composition via multiple instructions in a transaction
 // initialize function (pseudo code)
 fn initialize(accounts) {
     let counter = deserialize(accounts.counter);
@@ -16,3 +17,5 @@ fn initialize(accounts) {
     counter.count = 0;
     counter.is_initialized = true;
 }
+
+// program composition via Cross Program Invocation (CPI)
