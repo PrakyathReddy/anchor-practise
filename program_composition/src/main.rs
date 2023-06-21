@@ -6,6 +6,10 @@ fn main() {
         pub is_initialized: bool,
     }
 
+    fn increment(accounts) {
+        let counter = deserialize(accounts.counter);
+        counter.count += 1;
+    }
     struct counterCounter {
         count: u64,
     }
