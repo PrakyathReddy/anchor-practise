@@ -5,6 +5,10 @@ fn main() {
         pub count: u64,
         pub is_initialized: bool,
     }
+
+    struct counterCounter {
+        count: u64,
+    }
 }
 
 // program composition via multiple instructions in a transaction
@@ -19,3 +23,17 @@ fn initialize(accounts) {
 }
 
 // program composition via Cross Program Invocation (CPI)
+fn initialize(accounts) {
+    accounts.system_program.create_account(accounts.payer, accounts.counter);
+    let counter = deserialize(accounts.counter);
+    counter.count = 0;
+}
+
+// validate program inputs
+fn transfer(accounts, lamports) {
+    if !accounts.from.is_signer {
+        error();
+    }
+    accounts.from.lamports -= lamports;
+    accounts.to.lamports += lamports;
+}
