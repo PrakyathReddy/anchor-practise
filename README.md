@@ -38,6 +38,6 @@ This instruction defines the context of initializing the entrypoint and is used 
 
 An Anchor program consists of three parts:
 
-👉 The program module marked with `#[program]` is where you define your business logic. You do so by writing functions that can be called by clients or other programs.
-👉 The Accounts structs which are marked with `#[derive(Accounts)]` is where you define which accounts your instruction expects and which constraints these accounts should adhere to. You do this via two constructs: Types and constraints.
-👉 The `declare_id!` macro creates an ID field that stores the address of your program. Anchor uses this hardcoded ID for security checks and allows other crates to access your program's address.
+👉 The program module marked with `#[program]` is where you define your business logic. You do so by writing functions that can be called by clients or other programs.  
+👉 The Accounts structs which are marked with `#[derive(Accounts)]` is where you define which accounts your instruction expects and which constraints these accounts should adhere to. You do this via two constructs: Types and constraints.  
+👉 The `declare_id!` macro creates an ID field that stores the address of your program. Anchor uses this hardcoded ID for security checks and allows other crates to access your program's address.  
